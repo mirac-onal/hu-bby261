@@ -1,0 +1,87 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOvDMXPlfW/XND57kCBHGCk",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/mirac-onal/hu-bby261/blob/main/K%C3%BCt%C3%BCphanesiz_KonuTespiti(Mira%C3%A7_%C3%96nal)_ipynb_adl%C4%B1_not_defterinin_kopyas%C4%B1.ipynb1\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PPk1j2lWAAd6",
+        "outputId": "bbfeb323-c361-41ec-b88f-db091554925c"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Metin şu konu ile ilişkilendirilmiştir: Siyaset\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Konu başlıkları ve anahtar kelimeler\n",
+        "topics = {\n",
+        "    \"Siyaset\": [\"seçim\", \"parti\", \"hükümet\", \"kanun\", \"milletvekili\", \"politikacı\", \"oy\", \"demokrasi\"],\n",
+        "    \"Teknoloji\": [\"yazılım\", \"donanım\", \"internet\", \"yapay zeka\", \"bilgisayar\", \"robot\", \"programlama\", \"tekno\"],\n",
+        "    \"Spor\": [\"futbol\", \"basketbol\", \"maç\", \"oyuncu\", \"şampiyon\", \"takım\", \"gol\", \"stadyum\"],\n",
+        "    \"Sağlık\": [\"hastalık\", \"tedavi\", \"doktor\", \"ilaç\", \"sağlık\", \"korona\", \"aşı\", \"bakteri\"],\n",
+        "    \"Eğlence\": [\"film\", \"dizi\", \"müzik\", \"konser\", \"şov\", \"tiyatro\", \"sanat\", \"şarkı\"]\n",
+        "}\n",
+        "\n",
+        "def classify_text(text):\n",
+        "    # Metni küçük harfe çevirerek normalleştiriyoruz\n",
+        "    text = text.lower()\n",
+        "\n",
+        "    # Her konu başlığı için eşleşen anahtar kelimelerin sayısını tutacak bir sözlük\n",
+        "    topic_scores = {topic: 0 for topic in topics}\n",
+        "\n",
+        "    # Metindeki kelimeleri kontrol ederek, her konu başlığının anahtar kelimeleriyle eşleşenleri sayıyoruz\n",
+        "    for topic, keywords in topics.items():\n",
+        "        for keyword in keywords:\n",
+        "            if keyword in text:\n",
+        "                topic_scores[topic] += 1\n",
+        "\n",
+        "    # En fazla eşleşme bulunan konu başlığını seçiyoruz\n",
+        "    best_topic = max(topic_scores, key=topic_scores.get)\n",
+        "\n",
+        "    # Eğer eşleşme sayısı sıfırsa \"Diğer Konular\" döndürülür\n",
+        "    if topic_scores[best_topic] == 0:\n",
+        "        return \"Diğer Konular\"\n",
+        "    else:\n",
+        "        return best_topic\n",
+        "\n",
+        "# Örnek kullanım\n",
+        "text = \"Amerika'da seçimleri açık ara fark ile Donald Trump kazandı.\"\n",
+        "result = classify_text(text)\n",
+        "print(f\"Metin şu konu ile ilişkilendirilmiştir: {result}\")\n"
+      ]
+    }
+  ]
+}
