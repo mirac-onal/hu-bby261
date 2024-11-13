@@ -4,7 +4,6 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyPCdHqzoivzq2CpuCwu2bwR",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -23,28 +22,11 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/mirac-onal/hu-bby261/blob/main/Untitled9.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/mirac-onal/hu-bby261/blob/main/K%C3%BCt%C3%BCphanesiz_KonuTespiti(Mira%C3%A7.%C3%96nal)\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
       "cell_type": "code",
-      "execution_count": 3,
-      "metadata": {
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        },
-        "id": "MXBqm5Fk9vvb",
-        "outputId": "a2816376-64c1-4de4-d568-c61f444bd099"
-      },
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Metin şu konu ile ilişkilendirilmiştir: Siyaset\n"
-          ]
-        }
-      ],
       "source": [
         "# Konu başlıkları ve anahtar kelimeler\n",
         "topics = {\n",
@@ -78,9 +60,26 @@
         "        return best_topic\n",
         "\n",
         "# Örnek kullanım\n",
-        "text = \"Amerikan seçimlerinde Donald Trump bir çok eyaleti kazandı\"\n",
+        "text = \"Amerikada seçimleri Donald Trump kazandı !\"\n",
         "result = classify_text(text)\n",
         "print(f\"Metin şu konu ile ilişkilendirilmiştir: {result}\")"
+      ],
+      "metadata": {
+        "id": "7wOE4MEOQRR3",
+        "outputId": "f701b839-8d22-4fc0-9e11-ec1dbaf75598",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Metin şu konu ile ilişkilendirilmiştir: Siyaset\n"
+          ]
+        }
       ]
     }
   ]
